@@ -1,7 +1,10 @@
-//declare the variable of Budget for the total budget and assign value
-const budget = 100;
+/*//declare the variable of Budget for the total budget and assign value
+
+const budget = document.querySelector('.budget');
+const budget = document.querySelector('.budget');
+//const budget = 100;
 //declare the array for the giftPrices and assign values
-const giftPrices = [50, 46]
+//const giftPrices = [50, 46]
 //use function to add the items in the array and multiply the total by 8%
 
 //!!!!!!!!!!Why is below not working???
@@ -22,7 +25,7 @@ function totalPrice (giftPrices) {
 	return true
 }*/
 
-//ternary
+/*//ternary
 totalPrice <= budget ? console.log(true) : console.log(false);
 
 //if else statement 
@@ -32,4 +35,27 @@ if (totalPrice <= budget){
 }
 else{
 	console.log(false)
-}
+}*/
+
+document.getElementById('calculateBtn').addEventListener('click', function() {
+	let num1 = parseInt(document.getElementById('giftPrices0').value);
+	let num2 = parseInt(document.getElementById('giftPrices1').value);
+	let decimal = parseFloat(document.getElementById('salesTax').value);
+	let limit = parseInt(document.getElementById("budget").value);
+	let sum = num1 + num2;
+	let result = sum * decimal + sum;
+	document.getElementById('result').innerHTML = result;
+	if (result > limit) {
+		alert("You are OVER your Gift Budget!!");
+	  } else {
+		alert("Congratulations! You are at or under your budget :)");
+	  }
+});
+
+
+
+
+
+
+
+
