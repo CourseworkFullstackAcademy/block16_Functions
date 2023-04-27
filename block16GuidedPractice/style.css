@@ -83,7 +83,14 @@ img {
 	border-color: #523b5e;
 	border-width: 3px;
 	cursor: pointer;
+}
 
+#result {
+	font-weight: bolder;
+	text-align: center;
+	font-size: 10rem;
+	margin:0;
+	padding: 0;
 }
 a:link {
 	color: #136C72;

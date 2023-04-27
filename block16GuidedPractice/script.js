@@ -48,9 +48,9 @@ document.getElementById('calculateBtn').addEventListener('click', function() {
 	const formattedTotal = "$" + result.toFixed(2);
 document.getElementById("result").textContent = formattedTotal;
 	if (result > limit) {
-		alert("You are OVER your Gift Budget!!");
+		alert("You are OVER your Gift Budget!! Click OK and scroll down to find your exact total.");
 	  } else {
-		alert("Congratulations! You are at or under your budget :)");
+		alert("Congratulations! You are at or under your budget :) Click OK and scroll down to find your exact total.");
 	  }
 });
 
