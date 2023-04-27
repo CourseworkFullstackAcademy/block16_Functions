@@ -45,12 +45,15 @@ document.getElementById('calculateBtn').addEventListener('click', function() {
 	let sum = num1 + num2;
 	let result = sum * decimal + sum;
 	document.getElementById('result').innerHTML = result;
+	const formattedTotal = "$" + result.toFixed(2);
+document.getElementById("result").textContent = formattedTotal;
 	if (result > limit) {
 		alert("You are OVER your Gift Budget!!");
 	  } else {
 		alert("Congratulations! You are at or under your budget :)");
 	  }
 });
+
 
 
 

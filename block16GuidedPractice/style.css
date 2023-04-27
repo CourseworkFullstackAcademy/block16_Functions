@@ -72,6 +72,17 @@ img {
 	cursor: pointer;
 }
 
+#calculateBtn {
+	border-radius: 10rem;
+	background-color: #1c99a2;
+	color: #523b5e;
+	padding: 1rem;
+	min-width: 50%;
+	font-size: 2rem;
+	margin-left: 25%;
+	border-color: #523b5e;
+	border-width: 3px;
+}
 a:link {
 	color: #136C72;
 	text-decoration: none;
