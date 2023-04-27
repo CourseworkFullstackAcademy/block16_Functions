@@ -38,10 +38,10 @@ else{
 }*/
 
 document.getElementById('calculateBtn').addEventListener('click', function() {
-	let num1 = parseInt(document.getElementById('giftPrices0').value);
-	let num2 = parseInt(document.getElementById('giftPrices1').value);
-	let decimal = parseFloat(document.getElementById('salesTax').value);
-	let limit = parseInt(document.getElementById("budget").value);
+	let num1 = Number(document.getElementById('giftPrices0').value);
+	let num2 = Number(document.getElementById('giftPrices1').value);
+	let decimal = Number(document.getElementById('salesTax').value);
+	let limit = Number(document.getElementById("budget").value);
 	let sum = num1 + num2;
 	let result = sum * decimal + sum;
 	document.getElementById('result').innerHTML = result;
