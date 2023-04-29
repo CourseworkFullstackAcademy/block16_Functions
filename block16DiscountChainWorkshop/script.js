@@ -45,19 +45,47 @@ const rocky = {
 // }
 
 //1. MODIFIED:: first multiply number of refills by refill cost for each customer
+
+
+
+function findDiscountsTotal(rocky) {
 function subTotal(cust) {
 		let currentTotal = cust.pricePerRefill * cust.refills;
 		return  currentTotal;	
 };
 
-const custSubTotal = subTotal(rocky);
-//console.log(custSubTotal)
+const custSubTotal = subTotal(cust);
+console.log(custSubTotal)
 
 //const total = hasSubscription(customers)
 
-//2. MODIFIED:: then check if customer is subscription or coupon. If subscription, multiply by .25, if coupon, multiply subtract 10. Do not forget to retun.
+//2. MODIFIED:: then check if customer has subscription. If subscription, multiply by .25, and get a subscritption total. 
 
-function hasSubscription(cust) {
-	
+function subscriptionAmount(cust) {
+    if (cust.subscription) {
+        let subscription = custSubTotal - custSubTotal * .25;
+        return subscription;
+    } 
 }
 
+const subscriptionTotal = subscriptionAmount(cust)
+
+console.log (subscriptionTotal)
+
+function totalDiscountAmount(cust) {
+    if (cust.subscription) {
+        let subscriptionAndCoupon = subscriptionTotal - 10;
+        return subscriptionAndCoupon;
+    }
+    else  if (cust.coupon) {
+        let coupon = custSubTotal - 10;
+        return coupon;
+    }
+}
+    const finalAmount = totalDiscountAmount(cust);
+
+    return finalAmount;
+
+
+}
+console.log(findDiscountsTotal)
