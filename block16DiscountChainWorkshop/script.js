@@ -33,59 +33,79 @@ const rocky = {
 //1.  If a customer has a subscription, the customer will receive a 25% discount after the refill total has been calculated. Do a loop through the customers and calculate their number of refills and multiply it by the cost per refill if they have a subscription. Then apply the discount to their total refill, then return the string "Your grand total is ${finalAmount}."
 
 
-// function hasSubscription(custArray) {
-// 	for (let i = 0; i < custArray.length; i++) {
-// 		currentCustomer = custArray[i];
-// 		if (currentCustomer.subscription) {
-// 			let grandTotal = currentCustomer.pricePerRefill * currentCustomer.refills * .25
-// 			return grandTotal;
-// 		}
-		
-// 	  	}
-// }
+
 
 //1. MODIFIED:: first multiply number of refills by refill cost for each customer
 
 
-
-function findDiscountsTotal(rocky) {
 function subTotal(cust) {
 		let currentTotal = cust.pricePerRefill * cust.refills;
 		return  currentTotal;	
 };
 
-const custSubTotal = subTotal(cust);
-console.log(custSubTotal)
+//const custSubTotal = subTotal(cust);
 
 //const total = hasSubscription(customers)
 
 //2. MODIFIED:: then check if customer has subscription. If subscription, multiply by .25, and get a subscritption total. 
+//I can do this in the function in step 3!
+// function subscriptionAmount(cust) {
+//     if (cust.subscription) {
+//         let subscription = subTotal(cust) - subTotal(cust) * .25;
+//         return subscription;
+//     } 
+// }
 
-function subscriptionAmount(cust) {
-    if (cust.subscription) {
-        let subscription = custSubTotal - custSubTotal * .25;
-        return subscription;
-    } 
-}
 
-const subscriptionTotal = subscriptionAmount(cust)
 
-console.log (subscriptionTotal)
+//console.log (subscriptionTotal)
 
+//3. take the amount found in the function subscription amount and use it to find the total if they have a coupon and a subscription, and a total of if they have just the coupon.
 function totalDiscountAmount(cust) {
-    if (cust.subscription) {
-        let subscriptionAndCoupon = subscriptionTotal - 10;
-        return subscriptionAndCoupon;
-    }
-    else  if (cust.coupon) {
-        let coupon = custSubTotal - 10;
-        return coupon;
-    }
+    let finalAmount;
+	if (cust.subscription && cust.coupon) {
+	  finalAmount = subTotal(cust) - subTotal(cust) * .25 - 10;
+	} else if (cust.subscription) {
+	  finalAmount = subTotal(cust) - subTotal(cust) * .25;
+	} else if (cust.coupon) {
+	  finalAmount = subTotal(cust) - 10;
+	} else {
+	  finalAmount = subTotal(cust);
+	}
+	return finalAmount;
 }
-    const finalAmount = totalDiscountAmount(cust);
-
-    return finalAmount;
 
 
-}
-console.log(findDiscountsTotal)
+// 4.  Now that all the functions work, I need to learn how to call all of these in a main function so I only have to put in the value (customer's name) once. 
+
+function main() {
+	const timmy = {
+	  prescription: "acetaminophen",
+	  pricePerRefill: 25,
+	  refills: 3,
+	  subscription: false,
+	  coupon: true,
+	};
+  
+	const sarah = {
+	  prescription: "diphenhydramine",
+	  pricePerRefill: 50,
+	  refills: 1,
+	  subscription: true,
+	  coupon: false,
+	};
+  
+	const rocky = {
+	  prescription: "phenylephrine",
+	  pricePerRefill: 30,
+	  refills: 5,
+	  subscription: true,
+	  coupon: true,
+	};
+  
+	let finalAmount = totalDiscountAmount(timmy);
+    console.log(`Your grand total is $${finalAmount}.`);
+    return `Your grand total is $${finalAmount}.`;
+  }
+  
+  main();
