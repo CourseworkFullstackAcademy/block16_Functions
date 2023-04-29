@@ -6,29 +6,6 @@
 
 //At the end of the script, you should return and log the string "Your grand total is ${finalAmount}."
 
-const timmy = {
-    prescription: "acetaminophen",
-    pricePerRefill: 25,
-    refills: 3,
-    subscription: false,
-    coupon: true,
-};
-
-const sarah = {
-    prescription: "diphenhydramine",
-    pricePerRefill: 50,
-    refills: 1,
-    subscription: true,
-    coupon: false,
-}
-
-const rocky = {
-    prescription: "phenylephrine",
-    pricePerRefill: 30,
-    refills: 5,
-    subscription: true,
-    coupon: true,
-}
 
 //1.  If a customer has a subscription, the customer will receive a 25% discount after the refill total has been calculated. Do a loop through the customers and calculate their number of refills and multiply it by the cost per refill if they have a subscription. Then apply the discount to their total refill, then return the string "Your grand total is ${finalAmount}."
 
@@ -43,9 +20,7 @@ function subTotal(cust) {
 		return  currentTotal;	
 };
 
-//const custSubTotal = subTotal(cust);
 
-//const total = hasSubscription(customers)
 
 //2. MODIFIED:: then check if customer has subscription. If subscription, multiply by .25, and get a subscritption total. 
 //I can do this in the function in step 3!
@@ -103,7 +78,7 @@ function main() {
 	  coupon: true,
 	};
   
-	let finalAmount = totalDiscountAmount(timmy);
+	let finalAmount = totalDiscountAmount(rocky);
     console.log(`Your grand total is $${finalAmount}.`);
     return `Your grand total is $${finalAmount}.`;
   }
