@@ -70,14 +70,14 @@ img {
 	margin: 2rem ;
 }
 
-/*Why is this not moving the submit button to the center?
-
-.submit {
-	display: block;
-	margin: 0 auto;
-}*/
 .inputField {
 	width: 10ch;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+  	align-items: center;
 }
 
 .button:hover, .button:focus {
@@ -85,9 +85,6 @@ img {
 	cursor: pointer;
 }
 
-.button {
-	margin: auto 0;
-}
 
 #calculateBtn {
 	border-radius: 10rem;
