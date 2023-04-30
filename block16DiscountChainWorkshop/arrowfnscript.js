@@ -60,8 +60,8 @@ const message = () => {
 		coupon: true,
 	}
 	let finalAmount = calcFinalCost(sarah);
-	console.log(`Your grand total is ${finalAmount}.`);
-	return `Your grand total is ${finalAmount}.`;
+	console.log(`Your grand total is $${finalAmount}.`);
+	return `Your grand total is $${finalAmount}.`;
 }
 
 message();

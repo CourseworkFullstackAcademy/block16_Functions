@@ -84,3 +84,18 @@ function main() {
   }
   
   main();
+
+const evenOrOdd = (number) => {
+
+  if (number % 2 === 0){
+  
+  return "even";
+  }
+  else if (number % 2 === 1){
+  
+  return "odd";
+  }
+}
+
+const result = evenOrOdd(251);
+console.log(result)
