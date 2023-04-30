@@ -75,31 +75,7 @@ function totalDiscountAmount(cust) {
 
 // 4.  Now that all the functions work, I need to learn how to call all of these in a main function so I only have to put in the value (customer's name) once. 
 
-function main(name) {
-	const timmy = {
-	  prescription: "acetaminophen",
-	  pricePerRefill: 25,
-	  refills: 3,
-	  subscription: false,
-	  coupon: true,
-	};
-  
-	const sarah = {
-	  prescription: "diphenhydramine",
-	  pricePerRefill: 50,
-	  refills: 1,
-	  subscription: true,
-	  coupon: false,
-	};
-  
-	const rocky = {
-	  prescription: "phenylephrine",
-	  pricePerRefill: 30,
-	  refills: 5,
-	  subscription: true,
-	  coupon: true,
-	};
-  
+function main(name) {  
 	let finalAmount = totalDiscountAmount(name);
     console.log(`Your grand total is $${finalAmount}.`);
     return `Your grand total is $${finalAmount}.`;
