@@ -9,29 +9,29 @@
 
 // 1. Find the cost of the number of refills * of cost per refill. this will be a subtotal.
 
-const timmy = {
-	prescription: "acetaminophen",
-	pricePerRefill: 25,
-	refills: 3,
-	subscription: false,
-	coupon: true,
-};
-
-const sarah = {
-	prescription: "diphenhydramine",
-	pricePerRefill: 50,
-	refills: 1,
-	subscription: true,
-	coupon: false,
-}
-
-const rocky = {
-	prescription: "phenylephrine",
-	pricePerRefill: 30,
-	refills: 5,
-	subscription: true,
-	coupon: true,
-}
+	const timmy = {
+		prescription: "acetaminophen",
+		pricePerRefill: 25,
+		refills: 3,
+		subscription: false,
+		coupon: true,
+	};
+	
+	const sarah = {
+		prescription: "diphenhydramine",
+		pricePerRefill: 50,
+		refills: 1,
+		subscription: true,
+		coupon: false,
+	}
+	
+	const rocky = {
+		prescription: "phenylephrine",
+		pricePerRefill: 30,
+		refills: 5,
+		subscription: true,
+		coupon: true,
+	}
 
 const calcSubTotal = (cust) =>  {
 	let subTotal = cust.refills * cust.pricePerRefill;
@@ -61,29 +61,6 @@ const calcFinalCost = (cust) => {
 // 3. Then, using the result found in 2, return and print the result with the message "Your grand total is ${finalAmount}." Do not forget to use back tics, not quotation marks. 
 
 const message = (name) => {
-	const timmy = {
-		prescription: "acetaminophen",
-		pricePerRefill: 25,
-		refills: 3,
-		subscription: false,
-		coupon: true,
-	};
-	
-	const sarah = {
-		prescription: "diphenhydramine",
-		pricePerRefill: 50,
-		refills: 1,
-		subscription: true,
-		coupon: false,
-	}
-	
-	const rocky = {
-		prescription: "phenylephrine",
-		pricePerRefill: 30,
-		refills: 5,
-		subscription: true,
-		coupon: true,
-	}
 	let finalAmount = calcFinalCost(name);
 	console.log(`Your grand total is $${finalAmount}.`);
 	return `Your grand total is $${finalAmount}.`;
