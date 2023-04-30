@@ -9,7 +9,29 @@
 
 //1.  If a customer has a subscription, the customer will receive a 25% discount after the refill total has been calculated. Do a loop through the customers and calculate their number of refills and multiply it by the cost per refill if they have a subscription. Then apply the discount to their total refill, then return the string "Your grand total is ${finalAmount}."
 
+const timmy = {
+	prescription: "acetaminophen",
+	pricePerRefill: 25,
+	refills: 3,
+	subscription: false,
+	coupon: true,
+  };
 
+  const sarah = {
+	prescription: "diphenhydramine",
+	pricePerRefill: 50,
+	refills: 1,
+	subscription: true,
+	coupon: false,
+  };
+
+  const rocky = {
+	prescription: "phenylephrine",
+	pricePerRefill: 30,
+	refills: 5,
+	subscription: true,
+	coupon: true,
+  };
 
 
 //1. MODIFIED:: first multiply number of refills by refill cost for each customer
@@ -53,7 +75,7 @@ function totalDiscountAmount(cust) {
 
 // 4.  Now that all the functions work, I need to learn how to call all of these in a main function so I only have to put in the value (customer's name) once. 
 
-function main() {
+function main(name) {
 	const timmy = {
 	  prescription: "acetaminophen",
 	  pricePerRefill: 25,
@@ -78,24 +100,13 @@ function main() {
 	  coupon: true,
 	};
   
-	let finalAmount = totalDiscountAmount(rocky);
+	let finalAmount = totalDiscountAmount(name);
     console.log(`Your grand total is $${finalAmount}.`);
     return `Your grand total is $${finalAmount}.`;
   }
   
-  main();
+  main(timmy);
+  main(sarah);
+  main(rocky);
 
-const evenOrOdd = (number) => {
 
-  if (number % 2 === 0){
-  
-  return "even";
-  }
-  else if (number % 2 === 1){
-  
-  return "odd";
-  }
-}
-
-const result = evenOrOdd(251);
-console.log(result)
